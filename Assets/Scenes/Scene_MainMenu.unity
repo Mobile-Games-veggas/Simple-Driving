@@ -919,6 +919,7 @@ MonoBehaviour:
   energyRechargeDuration: 1
   androidNotificationHandler: {fileID: 2035562995}
   iOSNotificationHandler: {fileID: 2035562996}
+  playButton: {fileID: 1862499537}
 --- !u!114 &2035562995
 MonoBehaviour:
   m_ObjectHideFlags: 0
