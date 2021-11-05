@@ -15,21 +15,21 @@ public class Car : MonoBehaviour
     {
         speed += speedGamePerSecond * Time.deltaTime; //разгон
 
-        transform.Rotate(0f,steerValue * turnSpeed * Time.deltaTime, 0f);
+        transform.Rotate(0f,steerValue * turnSpeed * Time.deltaTime, 0f); // поворот
 
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime); // вперед перемещение
     }
 
     private void OnTriggerEnter(Collider other) 
     {
         if (other.CompareTag("Obstacle"))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(0); // если проиграл, то сцена 0
         }    
     }
 
     public void Steer(int value)
     {
-        steerValue = value;
+        steerValue = value; // калибровка управления
     }
 }

@@ -15,18 +15,18 @@ public class ScoreSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score += Time.deltaTime * scoreMultiplayer;
+        score += Time.deltaTime * scoreMultiplayer; // счет
 
-        scoreText.text = Mathf.FloorToInt(score).ToString();
+        scoreText.text = Mathf.FloorToInt(score).ToString(); // округление
     }
     
     private void OnDestroy() 
     {
-        int currentHighScore = PlayerPrefs.GetInt(HighScoreKey,0);
+        int currentHighScore = PlayerPrefs.GetInt(HighScoreKey,0); // получаем прежнее макс значение
 
         if(score > currentHighScore)
         {
-            PlayerPrefs.SetInt(HighScoreKey,Mathf.FloorToInt(score));
+            PlayerPrefs.SetInt(HighScoreKey,Mathf.FloorToInt(score)); // сохранение, если результат больше
         }
     }
 }
