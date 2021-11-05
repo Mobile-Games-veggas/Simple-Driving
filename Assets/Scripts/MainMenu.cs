@@ -53,7 +53,7 @@ public class MainMenu : MonoBehaviour
             }
             else
             {
-                playButton.interactable = false;
+                // playButton.interactable = false;
                 Invoke(nameof(EnergyRecharget), (energyReady - DateTime.Now).Seconds);
             }
         }
@@ -63,7 +63,7 @@ public class MainMenu : MonoBehaviour
 
     private void EnergyRecharget()
     {
-        playButton.interactable = true;
+        // playButton.interactable = true;
         energy = maxEnergy;
         PlayerPrefs.SetInt(EnergyKey, energy);
         energyText.text = $"Play ({energy})";
